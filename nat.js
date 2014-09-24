@@ -9,14 +9,9 @@ read('./ram.txt', 'utf8')
 .then(function (content) {
   var obj = JSON.parse(content);
   var ram = obj.ram
+  var cpu_temp =  obj.temp
   ram.used = ram.total-ram.free 
-  console.log(obj.ram);
-//  ram.forEach(function(v, k) {
-//    var tmp = v.split(":");
-//    var type =  tmp[0];
-//    var value =  tmp[1].trim();
-//    console.log(type, value);
-//  }); 
+  console.log(ram, cpu_temp);
 })
 .fail(function() {
   console.log(arguments);
